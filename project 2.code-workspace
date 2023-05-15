@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "project 2",
+			"path": "../../../../Users/yehor/Downloads/project 2"
+		},
+		{
+			"name": "JS-education",
+			"path": "."
+		},
+		{
+			"name": "elements 2",
+			"path": "../../../../Users/yehor/Downloads/elements 2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project 2"
+	}
+}

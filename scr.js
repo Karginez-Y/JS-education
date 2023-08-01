@@ -782,123 +782,123 @@
 //     return result;
 // }
 
-function pow(x, n) {
-    if (n === 1) {
-        return x;
-    } else {
-        return x * pow(x, n - 1);
-    }
-}
-
-
-console.log(pow(2, 4)); //степень
-
-
-let students = {
-    js: [{
-        name: 'John',
-        progress: 100
-    }, {
-        name: 'Ivan',
-        progress: 60
-    }],
-
-    html: {
-        basic: [{
-            name: 'Peter',
-            progress: 20
-        }, {
-            name: 'Ann',
-            progress: 18
-        }],
-
-        pro: [{
-            name: 'Sam',
-            progress: 10
-        }]
-    }
-};
-
-// function getTotalProgressByIteration(data) {
-//     let total = 0;
-//     let students = 0;
-
-//     for (let course of Object.values(data)) {
-//         if (Array.isArray(course)) {
-//             students += course.length;
-
-//             for (let i = 0; i < course.length; i++) {
-//                 total += course[i].progress;
-//             }
-//         } else {
-//             for (let subCourse of Object.values(course)) {
-//                 students += subCourse.length;
-
-//                 for (let i = 0; i < subCourse.length; i++) {
-//                     total += subCourse[i].progress;
-//                 }
-//             }
-//         }
+// function pow(x, n) {
+//     if (n === 1) {
+//         return x;
+//     } else {
+//         return x * pow(x, n - 1);
 //     }
-
-//     return total / students;
 // }
 
-// console.log(getTotalProgressByIteration(students));
 
-function getTotalProgressByRecursion(data) {
-    if (Array.isArray(data)) {
-        let total = 0;
-
-        for (let i = 0; i < data.length; i++) {
-            total += data[i].progress;
-        }
-
-        return [total, data.length];
-
-    } else {
-        let total = [0, 0];
-
-        for (let subData of Object.values(data)) {
-            const subDataArr = getTotalProgressByRecursion(subData);
-            total[0] += subDataArr[0];
-            total[1] += subDataArr[1];
-        }
-
-        return total;
-    }
-}
-
-const result = getTotalProgressByRecursion(students);
-
-console.log(result[0]/result[1]);
+// console.log(pow(2, 4)); //степень
 
 
-function factorial(n) {
-    if (n === 1) {
-        return n;
-    } else {
-        return n * factorial(n - 1);
-    }
-}
+// let students = {
+//     js: [{
+//         name: 'John',
+//         progress: 100
+//     }, {
+//         name: 'Ivan',
+//         progress: 60
+//     }],
 
-console.log(factorial(5));
+//     html: {
+//         basic: [{
+//             name: 'Peter',
+//             progress: 20
+//         }, {
+//             name: 'Ann',
+//             progress: 18
+//         }],
 
-function factorial(n) {
-    if (Math.round(n) != n || typeof(n) != 'number'){
-        return 'Error';
-    } else if (n <= 0){
-        return 1;
-    }else{
-        if (n === 1) {
-            return n;
-        } else {
-            let result = n * factorial(n - 1);
-            return result;
-        }
-        return result;
-    }
-}
+//         pro: [{
+//             name: 'Sam',
+//             progress: 10
+//         }]
+//     }
+// };
+
+// // function getTotalProgressByIteration(data) {
+// //     let total = 0;
+// //     let students = 0;
+
+// //     for (let course of Object.values(data)) {
+// //         if (Array.isArray(course)) {
+// //             students += course.length;
+
+// //             for (let i = 0; i < course.length; i++) {
+// //                 total += course[i].progress;
+// //             }
+// //         } else {
+// //             for (let subCourse of Object.values(course)) {
+// //                 students += subCourse.length;
+
+// //                 for (let i = 0; i < subCourse.length; i++) {
+// //                     total += subCourse[i].progress;
+// //                 }
+// //             }
+// //         }
+// //     }
+
+// //     return total / students;
+// // }
+
+// // console.log(getTotalProgressByIteration(students));
+
+// function getTotalProgressByRecursion(data) {
+//     if (Array.isArray(data)) {
+//         let total = 0;
+
+//         for (let i = 0; i < data.length; i++) {
+//             total += data[i].progress;
+//         }
+
+//         return [total, data.length];
+
+//     } else {
+//         let total = [0, 0];
+
+//         for (let subData of Object.values(data)) {
+//             const subDataArr = getTotalProgressByRecursion(subData);
+//             total[0] += subDataArr[0];
+//             total[1] += subDataArr[1];
+//         }
+
+//         return total;
+//     }
+// }
+
+// const result = getTotalProgressByRecursion(students);
+
+// console.log(result[0]/result[1]);
+
+
+// function factorial(n) {
+//     if (n === 1) {
+//         return n;
+//     } else {
+//         return n * factorial(n - 1);
+//     }
+// }
+
+// console.log(factorial(5));
+
+// function factorial(n) {
+//     if (Math.round(n) != n || typeof(n) != 'number'){
+//         return 'Error';
+//     } else if (n <= 0){
+//         return 1;
+//     }else{
+//         if (n === 1) {
+//             return n;
+//         } else {
+//             let result = n * factorial(n - 1);
+//             return result;
+//         }
+//         return result;
+//     }
+// }
 
 //События на мобильных устройствах
 
@@ -909,20 +909,20 @@ function factorial(n) {
 // toucjleave
 // touchcancel
 
-const box = document.querySelector('.box');
+// const box = document.querySelector('.box');
 
-box.addEventListener('touchstart', (e) => {
-    e.preventDefault();
+// box.addEventListener('touchstart', (e) => {
+//     e.preventDefault();
 
-    console.log('Start');
-    console.log(e.touches); //количество касаний
-});
+//     console.log('Start');
+//     console.log(e.touches); //количество касаний
+// });
 
-box.addEventListener('touchmove', (e) => {
-    e.preventDefault();
+// box.addEventListener('touchmove', (e) => {
+//     e.preventDefault();
 
-    console.log(e.targetTouches[0].pageX); //координаты первого пальца
-});
+//     console.log(e.targetTouches[0].pageX); //координаты первого пальца
+// });
 
 
 //touches
@@ -932,21 +932,21 @@ box.addEventListener('touchmove', (e) => {
 
 // Оператор нулевого слияния (Nullish, ??) ES11
 
-const box = document.querySelector('.box');
-const newH = 100;
-const newW = 400;
+// const box = document.querySelector('.box');
+// const newH = 100;
+// const newW = 400;
 
-function changeParams(elem, h, w){
-    elem.style.height = `${h || 200}px`; //если Н фолс то 200, но также сработает если 0
-    elem.style.height = `${w || 200}px`; //можно использовать ??
-}
-changeParams(box, newH, newW);
+// function changeParams(elem, h, w){
+//     elem.style.height = `${h || 200}px`; //если Н фолс то 200, но также сработает если 0
+//     elem.style.height = `${w || 200}px`; //можно использовать ??
+// }
+// changeParams(box, newH, newW);
 
-let userName;
-let userId;
+// let userName;
+// let userId;
 
-console.log(userName ?? 'User'); //проверяет только на null и undefined
-console.log(userName ?? userId ?? 'User'); //если нет юзернейм и юзер ид тогда "юзер"
+// console.log(userName ?? 'User'); //проверяет только на null и undefined
+// console.log(userName ?? userId ?? 'User'); //если нет юзернейм и юзер ид тогда "юзер"
 
 //?? нельзя использовать с &&
 
@@ -955,99 +955,99 @@ console.log(userName ?? userId ?? 'User'); //если нет юзернейм и
 //Оператор опциональной цепочки (?.) ES11
 
 
-const boxx = document.querySelector('.box');
-const block = document.querySelector('.block'); 
+// const boxx = document.querySelector('.box');
+// const block = document.querySelector('.block'); 
 
-console.log(block); //нет на странице NULL
+// console.log(block); //нет на странице NULL
 
 
-console.log(block.textContent); // ошибка
+// console.log(block.textContent); // ошибка
 
-console.log(1 + 2); // не выведется изза ошибки
+// console.log(1 + 2); // не выведется изза ошибки
 
-console.log(block?.textContent); // вернет андефайнд код продолжит выполнятся, работает на чтение, на запись нет
+// console.log(block?.textContent); // вернет андефайнд код продолжит выполнятся, работает на чтение, на запись нет
 
-const userData = {
-    name: 'Ivan',   //в запросе и не хватает данных
-    age: null
-};
+// const userData = {
+//     name: 'Ivan',   //в запросе и не хватает данных
+//     age: null
+// };
 
-if (userData && userData.skills && userData.skills.js) { //решение проблемы через условие
-    console.log(userData.skills.js);
-}
+// if (userData && userData.skills && userData.skills.js) { //решение проблемы через условие
+//     console.log(userData.skills.js);
+// }
 
-console.log(userData.skills?.js); //тоже самое, "?" проверяет то что справа
+// console.log(userData.skills?.js); //тоже самое, "?" проверяет то что справа
 
-userData.say?.(); //если нет метода вернет андефайнд
+// userData.say?.(); //если нет метода вернет андефайнд
 
 //Живые коллекции и полезные методы
 
-const boxesQuery = document.querySelectorAll('.box'); //возвращает нодлист. есть свои методы
-const boxesGet = document.getElementsByClassName('box'); //взвращает ХТМЛколлекцию. нет методов
-console.log(document.body.children); //тоже ХТМЛколлекцию псеводомассив без методов
+// const boxesQuery = document.querySelectorAll('.box'); //возвращает нодлист. есть свои методы
+// const boxesGet = document.getElementsByClassName('box'); //взвращает ХТМЛколлекцию. нет методов
+// console.log(document.body.children); //тоже ХТМЛколлекцию псеводомассив без методов
 
-boxesQuery[0].remove();
-boxesGet[0].remove();
+// boxesQuery[0].remove();
+// boxesGet[0].remove();
 
-console.log(boxesQuery); //вернет все элементы существ на момент создания квери селектор (статичная коллекция)
-console.log(boxesGet); // вернет текущее состояние псевдомассива без без удаленных 2х элементов (живая коллекция)
+// console.log(boxesQuery); //вернет все элементы существ на момент создания квери селектор (статичная коллекция)
+// console.log(boxesGet); // вернет текущее состояние псевдомассива без без удаленных 2х элементов (живая коллекция)
 
-console.log(Array.from(boxesGet)); //преобразовал псевдомассив без методов, в обычный массив с методами(статичный)
+// console.log(Array.from(boxesGet)); //преобразовал псевдомассив без методов, в обычный массив с методами(статичный)
 
-boxesQuery.forEach(box => {
-    if (box.matches('.this')) console.log(box); //ищет селектр внутри элемента
-});
+// boxesQuery.forEach(box => {
+//     if (box.matches('.this')) console.log(box); //ищет селектр внутри элемента
+// });
 
-console.log(boxesQuery[0].closest('.wrapper'));//ищет ближайшего родителя //есди не находит - null
+// console.log(boxesQuery[0].closest('.wrapper'));//ищет ближайшего родителя //есди не находит - null
 
 //Тип данных Symbol
 
 //свойствами обьектами могут быть только строки и символы
 
-const obj = {
-    'name': 'test',
-    [Symbol('id')]: 1 //скрыт, нельзя обратится по описанию если нет переменной, приватное свойство, не видно при переборе
-};
+// const obj = {
+//     'name': 'test',
+//     [Symbol('id')]: 1 //скрыт, нельзя обратится по описанию если нет переменной, приватное свойство, не видно при переборе
+// };
 
-let id = Symbol("id"); 
-obj[id] = 1;
-
-
-//let id2 = Symbol('id');
-const obj2 = {
-    'name': 'test',
-    [Symbol('id')]: 1,
-    getId: function() {
-        return this[id];
-    }
-};
-
-console.log(obj2.getId());
-console.log(Object.getOwnPropertySymbols(obj2));
-console.log(obj2[Object.getOwnPropertySymbols(obj2)[0]]);
+// let id = Symbol("id"); 
+// obj[id] = 1;
 
 
-const myDB = {
-    movies: [],
-    actors: [],
-    [Symbol("id")]: 123
-};
+// //let id2 = Symbol('id');
+// const obj2 = {
+//     'name': 'test',
+//     [Symbol('id')]: 1,
+//     getId: function() {
+//         return this[id];
+//     }
+// };
 
-myDB.id = '34255345345435'; //случайно пеерезаписали ИД
+// console.log(obj2.getId());
+// console.log(Object.getOwnPropertySymbols(obj2));
+// console.log(obj2[Object.getOwnPropertySymbols(obj2)[0]]);
 
-console.log(myDB.id);
-console.log(myDB); //{ movies: [], actors: [], id: '34255345345435', [Symbol(id)]: 123 }
+
+// const myDB = {
+//     movies: [],
+//     actors: [],
+//     [Symbol("id")]: 123
+// };
+
+// myDB.id = '34255345345435'; //случайно пеерезаписали ИД
+
+// console.log(myDB.id);
+// console.log(myDB); //{ movies: [], actors: [], id: '34255345345435', [Symbol(id)]: 123 }
 
 // Дескрипторы свойств и полезные методы объектов
 
-const user = {
-    name: 'Alex',
-    surname: 'Smith',
-    birthday: '20/04/1993',
-    showMyData: function() {
-        console.log(`${this.name} ${this.surname}}`);
-    }
-};
+// const user = {
+//     name: 'Alex',
+//     surname: 'Smith',
+//     birthday: '20/04/1993',
+//     showMyData: function() {
+//         console.log(`${this.name} ${this.surname}}`);
+//     }
+// };
 
 //console.log(Object.getOwnPropertyDescriptor(user, 'name')); //{ value: 'Alex', writable: true, enumerable: true, configurable: true }
 
@@ -1056,16 +1056,16 @@ const user = {
 
 //Object.defineProperty(user, 'name', {value: 'gender'}); //создаст свойство с фолс для всех дискрипторов
 
-Object.defineProperty(user, 'showMyData', {enumerable: false}); //скрыть метод для цикла
+// Object.defineProperty(user, 'showMyData', {enumerable: false}); //скрыть метод для цикла
 
-for (let key in user) {
-    console.log(key);
-}
+// for (let key in user) {
+//     console.log(key);
+// }
 
-Object.defineProperties(user, {
-    name: {writable: false},
-    surname: {writable: false}
-});
+// Object.defineProperties(user, {
+//     name: {writable: false},
+//     surname: {writable: false}
+// });
 
 //writable
 //enumerable
@@ -1074,33 +1074,745 @@ Object.defineProperties(user, {
 // по дефолту у нового обьекта все тру
 
 
+//Итерируемые конструкции
+
+
+// const userr = {
+//     name: 'Alex',
+//     surname: 'Smith',
+//     birthday: '20/04/1993',
+//     showMyData: function() {
+//         console.log(`${this.name} ${this.surname}}`);
+//     }
+// };
+
+// const arr = ['a', 'b', 'c'];
+
+// for (let key in arr) { //for in получает сам ключ key = 0, 1, 2
+//     console.log(arr[key]); //for in не всегда перебирает по порядку массивы и строку!!
+// }
+
+// for (let key of arr) { //for of получает значение key = a, b, c
+//     console.log(key); ////for of для итерируемых обьектов (массив строка, set, map, дом коллекции) не подходит для обьектов!
+// }
+
+// const salaries = {
+//     john: 500,
+//     ivan: 1000,
+//     ann: 5000,
+//     sayHello: function() {
+//         console.log('Hello');
+//     }
+// };
+
+// salaries[Symbol.iterator] = function() {
+//     return {
+//         current: this.john,
+//         last: this.ann,
+
+//         next() {
+//             if (this.current < this.last) {
+//                 this.current = this.current + 500;
+//                 return {done: false, value: this.current};
+//             } else {
+//                 return {done: true};
+//             }
+//         }
+//     };
+// };
+
+// for (let res of salaries) {
+//     console.log(res);
+// }
+
+// const iterator = salaries[Symbol.iterator]();
+// console.log(iterator.next());
+
+
+
+// // Map/////////////////////
+
+// const shops = [
+//     {rice: 500},
+//     {oil: 200},
+//     {bread: 50}
+// ];
+
+// const map = new Map();
+
+// // const map = new Map([
+// //     [{paper: 400}, 8000]
+// // ]);
+
+// map.set(shops[0], 5000)
+//    .set(shops[1], 3000)
+//    .set(shops[2], 7000); //или с помощь forEach
+
+// //console.log(map); //map это массив масивов
+
+// // console.log(map.get(shops[0]));
+// // console.log(map.has(shops[0]));
+// // map.delete(key);
+// // map.clear();
+// // map.size();
+// // map.keys();
+
+// // for (let shop of map.keys()) {
+// //     console.log(shop);
+// // }
+
+// // const goods = [];
+
+// // for (let shop of map.keys()) {
+// //     goods.push(Object.keys(shop)[0]);
+// // }
+
+// // for (let price of map.values()) {
+// //     console.log(price);
+// // }
+
+// // for (let price of map.entries()) {
+// //     console.log(price);
+// // }
+
+// // for (let [shop, price] of map.entries()) {
+// //     console.log(shop, price);
+// // }
+
+// map.forEach((value, key, map) => {
+//     console.log(key, value);
+// }); 
+
+// const salaries2 = {
+//     john: 500,
+//     ivan: 1000,
+//     ann: 5000,
+//     sayHello: function() {
+//         console.log('Hello');
+//     }
+// };
+
+// const salariesMap = new Map(Object.entries(salaries2));
+
+// const newSalariesObj = Object.fromEntries(salariesMap);
+
+
+
+
+// //SET/////////// массив где каждое значение встречается однажды
+
+// //const arr = [1, 1, 2, 2, 4, 5, 6, 5];
+
+// // const set = new Set(arr);
+
+// // console.log(set);
+
+// const arr = ['alex', 'ann', 'oleg', 'alex'];
+
+// const set = new Set(arr);
+
+// set.add('ivan')
+//    .add('oleg');
+
+// // console.log(set);
+
+// // set.delete(value);
+// // set.has(value);
+// // set.clear();
+// // set.size;
+
+// //for (let value of set) console.log(value);
+// // set.forEach((value, valueAgaing, set) => {
+// //     console.log(value, valueAgaing);
+// // });
+
+// console.log(set.values());
+// console.log(set.keys()); //возвращает тоже самое что и вельюс кейс=вельюс в сет
+// console.log(set.entries());
+
+// function unique(arr) {
+//     return Array.from(new Set(arr)); //массив уникальных данных из сет
+// }
+
+// //BigInt///////////////
+
+// console.log(Number.MAX_SAFE_INTEGER);
+
+// //const bigint = 123423423423423423423423423423423423432434234n;
+
+// const sameBigint = BigInt(123423423423423423423423423423423423432434234);
+
+// // нельзя использовать с Math и обычными числами
+
+// console.log(5n / 2n); // вернет 2n, деление бигинт вернет округленное значение
+
+// console.log(5n > 2); //можно сравнивать c обычным числом
+
+// let bigint = 1n;
+// let number = 2;
+
+
+// console.log(bigint + BigInt(number));
+
+// console.log(Number(bigint) + number); //если число > MAX_SAFE_INTEGER - обрежется до MAX_SAFE_INTEGER
+
+
+
+// // задача на вычисление количества страниц
+
+// function amountOfPages(summary){
+//     let result = '';
+
+//     for (let i = 1; i <= summary; i++) {
+//         result+=i;
+//         if (result.length == summary) {
+//         return i;
+//         }
+//     }
+// }
+
+// console.log(amountOfPages(0));
+
+
+
+
+// function amountOfPages(summary){
+//     let result = '';
+//     let n = 0;
+
+//     for (let i = 1; i <= summary; i++) {
+//       result += i;
+//       if (result.length === summary) {
+//         n = i;
+//         break;
+//       }
+//     }
+
+//     return n;
+//   }
+
+//   console.log(amountOfPages(0));
+
+
+
+
+// //   function deepCount(a){
+// //     console.log(a.length);
+// //   }
+
+
+// ///ClassList и делегирование событий
+
+// const btns = document.querySelectorAll('button'),
+//       wrapper = document.querySelector('.btn-block');
+
+// // // console.log(btns[0].classList.length);
+// // // console.log(btns[0].classList.item(1));
+// // // console.log(btns[0].classList.add('red'));
+// // // console.log(btns[0].classList.remove('blue'));
+// // // console.log(btns[0].classList.toggle('red'));
+
+// // if (btns[1].classList.contains('red')) {
+// //     console.log('red');
+// // }
+
+
+// btns[0].addEventListener('click', () => {
+//     // if (!btns[1].classList.contains('red')) {
+//     //     btns[1].classList.add('red');
+//     // } else {
+//     //     btns[1].classList.remove('red');
+//     // }
+//     btns[1].classList.toggle('red');
+// });
+
+// // console.log(btns[0].className);
+
+
+// wrapper.addEventListener('click', (event) => {
+//     if (event.target && event.target.tagName == "BUTTON") {
+//         console.log('hello');
+//     }
+// });
+
+// wrapper.addEventListener('click', (event) => {
+//     if (event.target && event.target.matches('button.red')) {
+//         console.log('hello');
+//     }
+// });
+
+
+// // Скрипты и время их выполнения. setTimeout и setInterval
+
+// // const timerId = setTimeout(function() {
+// //     console.log('hello');
+// // }, 2000);
+
+// // const timerId = setTimeout(function(text) {
+// //     console.log(text);
+// // }, 2000, 'Hello');
+
+// // const timerId = setTimeout(logger, 2000);
 
 
 
 
 
+// const btn = document.querySelector('.btn');
+// let timerId,
+//     i = 0;
+
+// // btn.addEventListener('click', () => {
+// //     timerId = setInterval(logger, 500); //сет интервал не ждет окончания выполнения функции
+// // });
+
+// // clearInterval(timerId);
+
+// // function logger() {
+// //     if (i === 3) {
+// //         clearInterval(timerId);
+// //     }
+// //     console.log('text');
+// //     i++;
+// // }
+
+// // let id = setTimeout(function log() {
+// //     console.log('hello');
+// //     id = setTimeout(log, 500);
+// // }, 500);
+
+
+// /// 68. Работа с датами
+
+
+// const currentDate = new Date(); //текущая дата/время
+
+// const now = new Date('2020-05-01'); //сделать дату из строки
+// Date.parse('2020-05-01');//сделать дату из строки методом, тоже самое
+// const now = new Date(2020, 5, 1, 20);//дату из чисел, 2020-06-01T17:00:00.000Z
+// const now = new Date(1234242213434); //2009-02-10T05:03:33.434Z
+// const now = new Date(-1234242213434); //1930-11-21T18:56:26.566Z
+
+// const now = new Date();
+// console.log(now.getFullYear());
+// console.log(now.getMonth()); //счет с 0 - 11,
+// console.log(now.getDate()); //c 1 - 31
+// console.log(now.getDay()); //c 0 - 6, 0 - sunday
+// console.log(now.getUTCHours()); //получить в ютс
+
+// console.log(now.getTimezoneOffset()); //разница по сравнению с ютс
+// console.log(now.getTime()); // в милисекундах
+
+// console.log(now.setHours(18)); //установить время на 18 по таймзоне системы
+// console.log(now.setHours(18, 40));
+// console.log(now.setHours(50)); // перенос на след день
+
+// let start = new Date();
+
+// for (let i = 0; i < 1000000000; i++) {
+//     let some = i ** 3;
+// }
+
+// let end = new Date();
+
+// console.log(end - start);
+
+//75. Функции-конструкторы
+
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function() {
+//         console.log(`Hello ${this.name}`);
+//     };
+// }
+
+// User.prototype.exit = function() {
+//     console.log(`Пользователь ${this.name} ушел`);
+// };
+
+// const ivan = new User('Ivan', 28);
+
+// ivan.hello();
+// ivan.exit();
+
+//76. Контекст вызова. This
+
+
+// function showThis() {
+//     console.log(this);
+// }
+
+// showThis(); // для обычной функции вернет window если use strict - undefined
+
+
+// function showThis(a, b) {
+//     console.log(this);
+//     function sum() {
+//         console.log(this);
+//         return this.a + this.b; //будет ошибка так как по прежнему this - undefined
+//     }
+
+//     console.log(sum());
+// }
+// showThis(4, 5);
+
+// const obj = {
+//     a: 20,
+//     b: 15,
+//     sum: function() {
+//         console.log(this); //для обьекта this - сам обьект. вернет  a: 20, b: 15, sum: [Function: sum] }
+//         function shout() {
+//             console.log(this); //вернет undefined
+//         }
+//     }
+// };
+
+// obj.sum();
+
+
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+// }
+
+// let ivan = new User('Ivan', 23); //this в конструкторах и классах это новый экземпляр обьекта
+
+// function sayName(surname) {
+//     console.log(this);
+//     console.log(this.name + surname);
+// }
+
+// const user = {
+//     name: 'John'
+// };
+
+// sayName.call(user, 'Smith'); //вызов функции с контекстом обьекта user
+// sayName.apply(user, ['Smith']); //тоже самое другой синтаксис
+
+// function count(num) {
+//     return this*num;
+// }
+
+// const double = count.bind(2); //обьявляем что double это функция count с контекстом 3
+// console.log(double(3)); //вызываем новую функцию double
+
+// const bth = document.querySelector('button');
+
+// bth.addEventListener('click', function(){
+//     console.log(this); //this - сам элемент = event.target
+// });
+
+
+// const obj = {
+//     num: 5,
+//     sayNumber: function() {
+//         const say = () => {
+//             console.log(this); //у стрелочной функции нет контекста, контекст исчет у родителя this = obj
+//         };
+
+//         say();
+//     }
+// };
+
+// obj.sayNumber();
+
+// const double = a => a * 2; //короткая запись стрелочной функции ретурн не указывается
+
+
+// //Классы
+
+// class Rectangle {
+//     constructor(height, width) {
+//         this.height = height;
+//         this.width = width;
+//     }
+
+//     calcArea() {
+//         return this.height * this.width;
+//     }
+// }
+
+// class ColoredRectangleWithText extends Rectangle {
+//     constructor (height, width, text, bgColor) {
+//         super(height,width); //получить свойства главного родительского класса, всегда на первом месте в классе
+//         this.text = text;
+//         this.bgColor = bgColor;
+//     }
+
+//     showMyProps() {
+//         console.log(`text: ${this.text}, color: ${this.bgColor}`);
+//     }
+// }
+
+// const div = new ColoredRectangleWithText(25, 10, 'hello', 'red');
+
+// div.showMyProps();
+// console.log(div.calcArea());
+
+
+
+// const square = new Rectangle(10, 10);
+
+// console.log(square.calcArea);
+
+
+
+// //  Rest оператор и параметры по умолчанию (ES6)
+
+
+// const log = function(a, b, ...c) { //Rest оператор собирает велью в массив
+//     console.log(a, b, c);
+//     console.log(c[0]);
+// };
+
+// log('test1', 'test2', 'test3', 'test4','test5'); // test1 test2 [ 'test3', 'test4', 'test5' ]
+
+
+// function calcOrDouble(number, basis = 2) { //2 - параметр по умолчанию
+//     //basis = basis || 2; //вернет 2 если нет basis - устаревший метод
+//     console.log(number * basis);
+// }
+
+// calcOrDouble(3);
 
 
 
 
+// 82. JSON формат передачи данных, глубокое клонирование объектов
+
+
+// const persone = {
+//     name: 'Alex',
+//     tel: '+3803333333'
+// };
+
+// const json = JSON.stringify(persone);
+
+// const object = JSON.parse(json);
+
+
+// const persone = {
+//     name: 'Alex',
+//     tel: '+3803333333',
+//     parents: {
+//         mom: 'Olga',
+//         dad: 'Mike'
+//     }
+// };
+
+// const clone = JSON.parse(JSON.stringify(persone)); //глубокое клонирование обьекта
+
+
+//86. Promise (ES6)
+
+
+// console.log('запрос данных...');
+
+// const req = new Promise(function(resolve, reject) {
+//     setTimeout(() => {
+//         console.log('подготовка данных...');
+    
+//         const product = {
+//             name: 'TV',
+//             price: 2000
+//         };
+    
+
+//         resolve(product);
+//     }, 5000);
+// });
+
+// req.then((product) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             product.status = 'order';
+//             resolve(product);
+//             //reject();
+//         }, 2000);
+//     });
+// }).then(data => {
+//     data.modify = true;
+//     return data;
+// }).then(data => {
+//     console.log(data);
+// }).catch(() => {
+//     console.error('error');
+// }).finally(() =>{
+//     console.log('finally'); //всегда в конце, всегда отрабатывает
+// });
+
+// const test = time => {
+//     return new Promise(resolve => {
+//         setTimeout(() => resolve(`${time} ms`), time);
+//     });
+// };
+
+// // test(1000).then(() => console.log('1000 ms'));
+// // test(2000).then(() => console.log('2000 ms'));
+
+// Promise.all([test(1000), test(2000)]).then(() => { //ждем все промисы и чтото выполняем
+//     console.log('All');
+// });
+
+
+// Promise.race([test(1000), test(2000)]).then(() => { //ждем первый промис
+//     console.log('All');
+// });
+
+//87. Fetch API
+
+
+// fetch('https://jsonplaceholder.typicode.com/todos/1') //GET
+//       .then(response => response.json())
+//       .then(json => console.log(json));
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//     method: "POST",
+//     body: JSON.stringify({name: 'Alex'}),
+//     headers: {
+//         'Content-type': 'application/json'
+//     }
+// })
+// .then(response => response.json())
+// .then(json => console.log(json));
+
+// 88. Методы перебора массивов
+
+
+//Filter
+
+// const names = ['Ivan', 'Ann', 'Ksenia', 'Valt'];
+
+// const shortNemes = names.filter(function(name) { //возвращает новый массив с именами < 5
+//     return name.length < 5;
+// });
+
+
+// map
+
+const answers = ['IvAn', 'AnnA', 'Hello'];
+
+const result = answers.map(item => item.toLowerCase()); //  преберет и вернет новый переделанный масиив
+
+console.log(result);
+
+//every/some
+
+const some = [4, 'sdf', 'dsgstgtg'];
+
+console.log(some.some(item => typeof(item) === 'number')); //вернет тру если хоть один элемент подходит
+
+console.log(some.every(item => typeof(item) === 'number')); //верент тру если все элементы соответствуют условию
+
+
+// reduce
+
+
+const arr = [4, 5, 1, 3, 2, 6];
+                        // 0       4
+                        // 4       5
+                        // 9       1
+                        // 10      3
+                        // 13      2
+                        // 15      6 => 21
+const res = arr.reduce((sum, current) => sum + current);
+
+
+const arr2 = ['1', '2', '3', '4', '5', '6'];
+
+const res2 = arr2.reduce((sum, current) => `${sum}, ${current}`);
+
+console.log(res2);
+
+const arr3 = [4, 5, 1, 3, 2, 6];
+const res3 = arr3.reduce((sum, current) => sum + current, 3); //начальное значение (вместо 0)
+console.log(res3);
+
+
+const obj = {
+    ivan: 'persone',
+    ann: 'persone',
+    dog: 'animal',
+    cat: 'animal'
+};
+
+const newArr = Object.entries(obj)
+.filter(item => item[1] === 'persone')
+.map(item => item[0]);
+
+console.log(newArr);
+
+const films = [
+    {
+        name: 'Titanic',
+        rating: 9
+    },
+    {
+        name: 'Die hard 5',
+        rating: 5
+    },
+    {
+        name: 'Matrix',
+        rating: 8
+    },
+    {
+        name: 'Some bad film',
+        rating: 4
+    }
+];
+
+// function showGoodFilms(arr) {
+//     return arr.filter(item => item.rating >= 8);
+// }
+
+//console.log(showGoodFilms(films));
+
+// function showListOfFilms(arr) {
+//     return arr.reduce((sum, current) => `${typeof(sum) === 'object' ? sum.name : sum}, ${current.name}`);
+// }
+
+// console.log(showListOfFilms(films));
+
+// function setFilmsIds(arr) {
+
+// }
+
+function setFilmsIds(arr) {
+    return arr.map((film, i) => {
+        film.id = i;
+        return film;
+    });
+}
+
+const tranformedArray = setFilmsIds(films);
+console.log(tranformedArray);
+
+console.log(tranformedArray.every(item => Object.hasOwn(item, 'id')));
 
 
 
+const funds = [
+    {amount: -1400},
+    {amount: 2400},
+    {amount: -1000},
+    {amount: 500},
+    {amount: 10400},
+    {amount: -11400}
+];
 
+const getPositiveIncomeAmount = (data) => {
+    return data.filter(item => item.amount > 0)
+                .reduce((sum, current) => sum + current.amount, 0);
+};
 
+getPositiveIncomeAmount(funds);
 
+const getTotalIncomeAmount = (data) => {
+    return data.some(item => item.amount < 0) ? data.reduce((acc, curr) => acc + curr.amount, 0) : getPositiveIncomeAmount(data);
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+getTotalIncomeAmount(funds);

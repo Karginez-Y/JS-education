@@ -296,83 +296,129 @@
 //touples ///////////////
 
 
-const userData = {
-    isBirthdayData: true,
-    ageData: 40,
-    userNameData:'John',
-    messages: {
-        error: "Error"
-    }
-};
+// const userData = {
+//     isBirthdayData: true,
+//     ageData: 40,
+//     userNameData:'John',
+//     messages: {
+//         error: "Error"
+//     }
+// };
 
-//const userDataTouple: [boolean, number, string] = [true, 40, "John"];
-const userDataTouple: [boolean, number, ...string[]] = [true, 40, "John", "test", "test", "test"];//... можно использовать один раз в любом месте кортежа
-// userDataTouple[1] = 7; //ok
-// userDataTouple[3] = 7; //нет такого элемента в кортеже
-// userDataTouple.push(50); //добавляет елемент
-// userDataTouple[3] //все еще нет 3го индекса так как описано всего 3 елемента в кортеже
+// //const userDataTouple: [boolean, number, string] = [true, 40, "John"];
+// const userDataTouple: [boolean, number, ...string[]] = [true, 40, "John", "test", "test", "test"];//... можно использовать один раз в любом месте кортежа
+// // userDataTouple[1] = 7; //ok
+// // userDataTouple[3] = 7; //нет такого элемента в кортеже
+// // userDataTouple.push(50); //добавляет елемент
+// // userDataTouple[3] //все еще нет 3го индекса так как описано всего 3 елемента в кортеже
 
-const res = userDataTouple.map((t) => `${t} - data`);
+// const res = userDataTouple.map((t) => `${t} - data`);
 
-const [bthd, age, usName] = userDataTouple; // можно применять диструктуризацию и методы массивов
+// const [bthd, age, usName] = userDataTouple; // можно применять диструктуризацию и методы массивов
 
 
-///union /////
+// ///union /////
 
+
+// // const message: string | number = 5;
+// // const messages: string[] | number[] = ["a", "b"] 
+
+// // function printMsg (msg: string | number): void {
+// //     console.log(msg);
+// //     console.log(msg.toLowerCase()); // вызывает ошибку 
+
+// // }
+
+// // printMsg(4);
+// // printMsg('dsfdsfsdf');
+
+// //narrowing////////
 
 // const message: string | number = 5;
 // const messages: string[] | number[] = ["a", "b"] 
 
-// function printMsg (msg: string | number): void {
-//     console.log(msg);
-//     console.log(msg.toLowerCase()); // вызывает ошибку 
+// // function printMsg (msg: string | number): void {
+// //     if (typeof msg === 'string') {
+// //         console.log(msg.toLowerCase()); // msg уже стал стринг
+// //     } else {
+// //         console.log(msg.toExponential()); // msg уже стал числом
+// //     }
+
+// //     console.log(msg); // снова юнион тип
+
+// // }
+
+// function printMsg (msg: string[] | number | boolean): void {
+//     if (Array.isArray(msg)) {
+//         msg.forEach(m => console.log(m));
+//     } else if (typeof msg === 'number') {
+//         console.log(msg.toFixed())
+//     } else {
+//         console.log(msg);
+//     }
 
 // }
 
 // printMsg(4);
-// printMsg('dsfdsfsdf');
 
-//narrowing////////
-
-const message: string | number = 5;
-const messages: string[] | number[] = ["a", "b"] 
-
-// function printMsg (msg: string | number): void {
-//     if (typeof msg === 'string') {
-//         console.log(msg.toLowerCase()); // msg уже стал стринг
-//     } else {
-//         console.log(msg.toExponential()); // msg уже стал числом
+// const printReadings = (a: number | string, b: number | boolean) => {
+//     if (a === b) {
+//         console.log(a, b); // a, b - number 
 //     }
-
-//     console.log(msg); // снова юнион тип
-
 // }
 
-function printMsg (msg: string[] | number | boolean): void {
-    if (Array.isArray(msg)) {
-        msg.forEach(m => console.log(m));
-    } else if (typeof msg === 'number') {
-        console.log(msg.toFixed())
-    } else {
-        console.log(msg);
-    }
+// const printReadings2 = (a: number[] | string) => {
+//     console.log(a.slice(0, 3)) // работает с двумя типами поэтому сужение типов не нужно
+// }
 
+// function checkReadings (readings: {system: number} | {user: number}): void {
+//     if ('system' in readings) {
+//         console.log(readings.system)
+//     } else {
+//         console.log(readings.user)
+//     }
+// }
+
+// function logValue(x: string | Date) {
+//     if (x instanceof Date) {
+//         console.log(x.getDate());
+//     } else {
+//         console.log(x.trim())
+//     }
+// }
+
+//literal types////
+
+
+let msg: 'Hello' = 'Hello'
+
+msg = 'Hello' //нельзя ничего другого присвоить
+
+
+function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Server started' {
+    console.log(`server started on ${protocol}://server:${port}`);
+    return 'Server started'
 }
 
-printMsg(4);
+startServer('https', 3001);
 
-const printReadings = (a: number | string, b: number | boolean) => {
-    if (a === b) {
-        console.log(a, b); // a, b - number 
-    }
-}
+function createAnimation(
+    id: string | number, 
+    anmationName: string, 
+    timingFunc: 'ease' | 'ease-out' | 'ease-in' = 'ease',
+    duration: number,
+    iterCount: 'infinite' | number
+):void {
+    //const elem = document.querySelector(`#${id}`) as HTMLElement;
 
-const printReadings2 = (a: number[] | string) => {
-    console.log(a.slice(0, 3)) // работает с двумя типами поэтому сужение типов не нужно
-}
-
-const checkReadings = (readings: {system: number} | {user: number}): void {
+    //if (elem) {
+        console.log(`${anmationName} ${timingFunc} ${duration} ${iterCount}`);
+        //elem.style.animation = `${anmationName} ${timingFunc} ${duration} ${iterCount}`;
+    //}
     
 }
+
+createAnimation('id', 'fade', 'ease-in', 5, 'infinite');
+
 
 

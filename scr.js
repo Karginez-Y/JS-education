@@ -1,3 +1,4 @@
+"use strict";
 // // cycles 
 
 // let i = 1;
@@ -324,7 +325,7 @@
 // }
 // console.log(Object.keys(options).length);
 
-// const {border, bg} = options.colors; //диструктуризация обьекта ES6
+// const {border, bg} = options.colors; //деструктуризация обьекта ES6
 
 // //. Массивы и псевдомассивы
 
@@ -665,7 +666,7 @@
 
 // + '4';
 
-// parseInt('15px', 10);
+//parseInt('15px', 10);
 
 // // boolean
 
@@ -1393,6 +1394,8 @@
 // const now = new Date(1234242213434); //2009-02-10T05:03:33.434Z
 // const now = new Date(-1234242213434); //1930-11-21T18:56:26.566Z
 
+
+
 // const now = new Date();
 // console.log(now.getFullYear());
 // console.log(now.getMonth()); //счет с 0 - 11,
@@ -1694,125 +1697,481 @@
 
 // map
 
-const answers = ['IvAn', 'AnnA', 'Hello'];
+// const answers = ['IvAn', 'AnnA', 'Hello'];
 
-const result = answers.map(item => item.toLowerCase()); //  преберет и вернет новый переделанный масиив
+// const result = answers.map(item => item.toLowerCase()); //  преберет и вернет новый переделанный масиив
 
-console.log(result);
+// console.log(result);
 
-//every/some
+// //every/some
 
-const some = [4, 'sdf', 'dsgstgtg'];
+// const some = [4, 'sdf', 'dsgstgtg'];
 
-console.log(some.some(item => typeof(item) === 'number')); //вернет тру если хоть один элемент подходит
+// console.log(some.some(item => typeof(item) === 'number')); //вернет тру если хоть один элемент подходит
 
-console.log(some.every(item => typeof(item) === 'number')); //верент тру если все элементы соответствуют условию
-
-
-// reduce
+// console.log(some.every(item => typeof(item) === 'number')); //верент тру если все элементы соответствуют условию
 
 
-const arr = [4, 5, 1, 3, 2, 6];
-                        // 0       4
-                        // 4       5
-                        // 9       1
-                        // 10      3
-                        // 13      2
-                        // 15      6 => 21
-const res = arr.reduce((sum, current) => sum + current);
+// // reduce
 
 
-const arr2 = ['1', '2', '3', '4', '5', '6'];
+// const arr = [4, 5, 1, 3, 2, 6];
+//                         // 0       4
+//                         // 4       5
+//                         // 9       1
+//                         // 10      3
+//                         // 13      2
+//                         // 15      6 => 21
+// const res = arr.reduce((sum, current) => sum + current);
 
-const res2 = arr2.reduce((sum, current) => `${sum}, ${current}`);
 
-console.log(res2);
+// const arr2 = ['1', '2', '3', '4', '5', '6'];
 
-const arr3 = [4, 5, 1, 3, 2, 6];
-const res3 = arr3.reduce((sum, current) => sum + current, 3); //начальное значение (вместо 0)
-console.log(res3);
+// const res2 = arr2.reduce((sum, current) => `${sum}, ${current}`);
+
+// console.log(res2);
+
+// const arr3 = [4, 5, 1, 3, 2, 6];
+// const res3 = arr3.reduce((sum, current) => sum + current, 3); //начальное значение (вместо 0)
+// console.log(res3);
 
 
-const obj = {
-    ivan: 'persone',
-    ann: 'persone',
-    dog: 'animal',
-    cat: 'animal'
-};
+// const obj = {
+//     ivan: 'persone',
+//     ann: 'persone',
+//     dog: 'animal',
+//     cat: 'animal'
+// };
 
-const newArr = Object.entries(obj)
-.filter(item => item[1] === 'persone')
-.map(item => item[0]);
+// const newArr = Object.entries(obj)
+// .filter(item => item[1] === 'persone')
+// .map(item => item[0]);
 
-console.log(newArr);
+// console.log(newArr);
 
-const films = [
-    {
-        name: 'Titanic',
-        rating: 9
-    },
-    {
-        name: 'Die hard 5',
-        rating: 5
-    },
-    {
-        name: 'Matrix',
-        rating: 8
-    },
-    {
-        name: 'Some bad film',
-        rating: 4
-    }
-];
+// const films = [
+//     {
+//         name: 'Titanic',
+//         rating: 9
+//     },
+//     {
+//         name: 'Die hard 5',
+//         rating: 5
+//     },
+//     {
+//         name: 'Matrix',
+//         rating: 8
+//     },
+//     {
+//         name: 'Some bad film',
+//         rating: 4
+//     }
+// ];
 
-// function showGoodFilms(arr) {
-//     return arr.filter(item => item.rating >= 8);
-// }
+// // function showGoodFilms(arr) {
+// //     return arr.filter(item => item.rating >= 8);
+// // }
 
-//console.log(showGoodFilms(films));
+// //console.log(showGoodFilms(films));
 
-// function showListOfFilms(arr) {
-//     return arr.reduce((sum, current) => `${typeof(sum) === 'object' ? sum.name : sum}, ${current.name}`);
-// }
+// // function showListOfFilms(arr) {
+// //     return arr.reduce((sum, current) => `${typeof(sum) === 'object' ? sum.name : sum}, ${current.name}`);
+// // }
 
-// console.log(showListOfFilms(films));
+// // console.log(showListOfFilms(films));
+
+// // function setFilmsIds(arr) {
+
+// // }
 
 // function setFilmsIds(arr) {
+//     return arr.map((film, i) => {
+//         film.id = i;
+//         return film;
+//     });
+// }
+
+// const tranformedArray = setFilmsIds(films);
+// console.log(tranformedArray);
+
+// console.log(tranformedArray.every(item => Object.hasOwn(item, 'id')));
+
+
+
+// const funds = [
+//     {amount: -1400},
+//     {amount: 2400},
+//     {amount: -1000},
+//     {amount: 500},
+//     {amount: 10400},
+//     {amount: -11400}
+// ];
+
+// const getPositiveIncomeAmount = (data) => {
+//     return data.filter(item => item.amount > 0)
+//                 .reduce((sum, current) => sum + current.amount, 0);
+// };
+
+// getPositiveIncomeAmount(funds);
+
+// const getTotalIncomeAmount = (data) => {
+//     return data.some(item => item.amount < 0) ? data.reduce((acc, curr) => acc + curr.amount, 0) : getPositiveIncomeAmount(data);
+// };
+
+// getTotalIncomeAmount(funds);
+
+
+// ////////////////
+// const object = {};
+// formData.forEach(function(value, key){ //formData в обьект
+//     object[key] = value;
+// });
+
+// const json = JSON.stringify(Object.fromEntries(formData.entries())); //formData в json, у формдата есть метод ентрис, который преобразует в массив массивов, а фром ентрис возвращает в обьект
+
+// /////////////
+
+// //axios
+
+// axios.get('http://localhost:3000/menu')
+// .then(data => {
+//     data.data.forEach(({img, altimg, title, descr, price}) => {
+//         new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+//     });
+// });
+
+
+// //
+
+// // simple slider
+
+// const slides = document.querySelectorAll(".offer__slide"),
+// prev = document.querySelector('.offer__slider-prev'),
+// next = document.querySelector('.offer__slider-next'),
+// current = document.querySelector('#current'),
+// total = document.querySelector('#total');
+// let slideIndex = 1;
+
+// showSlides(slideIndex);
+
+// total.textContent = slides.length < 10 ? `0${slides.length}` : slides.length;
+
+// function showSlides(n) {
+// if (n > slides.length) {
+//   slideIndex = 1;
+// }
+
+// if (n < 1) {
+//   slideIndex = slides.length;
+// }
+
+// slides.forEach(item => item.style.display = 'none');
+
+// slides[slideIndex - 1].style.display = 'block';
+
+// current.textContent = slideIndex < 10 ? `0${slideIndex}` : slideIndex;
+// }
+
+// function plusSlides(n) {
+// showSlides(slideIndex += n);
+// }
+
+// prev.addEventListener('click', () => {
+// plusSlides(-1);
+// });
+
+// next.addEventListener('click', () => {
+// plusSlides(1);
+// });
+
+// 96. Регулярные выражения
+
+
+//new RegExp('pattern', 'flags'); // старый синтаксис
+
+// /pattern/f новый
+
+// const ans = 'eneneneennneeeee';//prompt('enter your name');
+
+// const reg = /n/ig;
+
+// //flags: i - независимо от регистра; g - поиск нескольких; m - многострочный режим
+
+// //console.log(ans.search("reg")); //серч исчет тольок первое совпадение
+
+// //console.log(ans.match(reg));
+
+// console.log(ans.replace(/./g, '*')); //заменить все символы на * c помощью регулярки
+// console.log(ans.replace(/\./g, '*')); //заменить . на * c помощью регулярки \ - экранирование
+
+
+// console.log('12-34-56'.replace(/-/g, ':'));
+
+// const ans = 'eneneneennneeeee';//prompt('enter your name');
+
+// const reg = /n/ig;
+// const reg2 = /\d/;
+// console.log(reg.test(ans)); //проверить есть ли n вернет тру/фолс
+// console.log(reg2.match(ans));
+// классы рег выражений:
+
+// \d - digits
+// \w - words
+// \s - spaces
+
+// \D - not digits
+// \W - not words
+// \S - not spaces
+
+
+//99. Геттеры и сеттеры (свойства объектов)
+
+// const persone = {
+//     name: "Alex",
+//     age: 25,
+
+//     get userAge() {
+//         return this.age;
+//     },
+//     set userAge(num) {
+//         this.age = num;
+//     }
+// };
+
+// console.log(persone.userAge = 30); //позволяет работать с методами как с свойствами
+// console.log(persone.userAge);
+
+
+//100. Инкапсуляция/////
+
+
+// function User(name, age) {
+//     this.name = name;
+//     this.age = age;
+
+//     this.say = function() {
+//         console.log(`user name: ${this.name}, age ${this.age}`);
+//     };
+// }
+
+// const ivan = new User('Ivan', 27);
+
+// ivan.age = 30;
+// ivan.name = 'Alex'; // можно легко изменять содержимое иван, можно вмешаться в работу обьекта
+
+
+// function User(name, age) {
+//     this.name = name;
+//     let userAge = age;
+
+//     this.say = function() {
+//         console.log(`user name: ${this.name}, age ${userAge}`);
+//     };
+// }
+
+// const ivan = new User('Ivan', 27);
+
+// console.log(ivan.userAge); //undefined
+
+// ivan.userAge = 30; // создало новое свойство в обьекте а не изменило переменную userAge
+// ivan.name = 'Alex'; 
+
+// ivan.say(); //user name: Alex, age 27 / возраст не изменен
+
+// function User(name, age) {
+//     this.name = name;
+//     let userAge = age;
+
+//     this.say = function() {
+//         console.log(`user name: ${this.name}, age ${userAge}`);
+//     };
+
+//     this.getAge = function() { //геттер
+//         return userAge;
+//     };
+
+//     this.setAge = function(age) { //сеттер
+//         if (typeof age === 'number' && age > 0 && age < 110 ) {
+//             userAge = age;
+//         } else {
+//             console.log('wrong value');
+//         }
+//     };
+// }
+
+// const ivan = new User('Ivan', 27);
+// console.log(ivan.name);
+// console.log(ivan.getAge()); 
+
+// ivan.setAge(30);
+// ivan.setAge(300);
+// console.log(ivan.getAge()); 
+
+// ivan.say();
+
+
+
+// class User {
+//     constructor(name, age) {
+//         this.name = name;
+//         this._age = age; //_age условное обозначение свойства которое не должно быть доступно из вне
+//     }
+
+//     say() {
+//         console.log(`user name: ${this.name}, age ${this._age}`);
+//     }
+
+//     get age() { 
+//         return this._age;
+//     }
+
+//     set age(age) { 
+//         if (typeof age === 'number' && age > 0 && age < 110 ) {
+//             this._age = age;
+//         } else {
+//             console.log('wrong value');
+//         }
+//     }
+// }
+
+// const ivan = new User('Ivan', 27);
+// console.log(ivan.age);
+
+// ivan.age = 99;
+// console.log(ivan.age);
+
+// ivan.say();
+
+
+// 101. Прием модуль, как и зачем его использовать
+
+
+// const number = 1;
+
+// (function(){
+//     let number = 2;
+//     console.log(number);
+//     console.log(number + 3); //создает функцию и сразу ее запускает и () разрешает функцию без имени
+// }());
+
+// console.log(number);
+
+
+// const user = (function() {
+//     const privat = function() {
+//         console.log('privat');
+//     };
+    
+//     return {
+//         getPrivat: privat
+//     };
+
+// }());
+
+
+// user.getPrivat();
+
+// //Ошибки. Как избежать “поломки” своего кода
+
+// try {
+//     console.log(normal);
+// } catch(e) {
+//     console.log(e.name);
+//     console.log(e.message);
+//     console.log(e.stack);
+// } finally {
 
 // }
 
-function setFilmsIds(arr) {
-    return arr.map((film, i) => {
-        film.id = i;
-        return film;
-    });
+//Функции-генераторы
+
+// function* generator() {
+//     yield 'S';
+//     yield 'c';
+//     yield 'r';
+//     yield 'i';
+//     yield 'p';
+//     yield 't';
+// }
+
+// const str = generator();
+
+// console.log(str.next()); //{ value: 'S', done: false }
+// console.log(str.next()); //{ value: 'c', done: false }
+// console.log(str.next()); //{ value: 'r', done: false }
+// console.log(str.next()); //{ value: 'i', done: false }
+// console.log(str.next()); //{ value: 'p', done: false }
+// // console.log(str.next()); //{ value: 't', done: false }
+// // console.log(str.next()); //{ value: undefined, done: true } дальше всегда андефайнд
+
+// console.log(str.next().value); //только значение
+
+// function* count(n) {
+//     for (let i = 0; i <n; i++) {
+//         yield i;
+//     }
+// }
+
+// const counter = count(7);
+
+// // console.log(counter.next().value);
+// // console.log(counter.next().value);
+// // console.log(counter.next().value);
+
+// for (let k of count(7)) {
+//     console.log(k);
+// }
+
+//
+
+// const multiply20 = (price) => price * 20;
+// const divide100 = (price) => price / 100;
+// const normalizePrice = (price) => price.toFixed(2);
+
+// const compose = (price, ...fns) => fns.reduceRight((res, fn) => fn(res), price);
+
+// const discount = compose(100, normalizePrice, divide100, multiply20);
+// console.log(discount);
+
+
+// const test = (...fns) => console.log(fns);
+
+// test(2, 4, 'wewe');
+
+
+
+
+
+console.log(0 || NaN || false || null);
+
+
+
+const promisify = (item, delay) =>
+    new Promise(resolve => setTimeout(() => resolve(item), delay));
+ 
+const a = () => promisify('a', 100);
+const b = () => promisify('b', 5000);
+const c = () => promisify('c', 3000);
+ 
+async function one() {
+    const promises = [a(), b(), c()];
+    const [outpu1, outpu2, outpu3] = await Promise.all(promises);
+    return `one is done: ${outpu1} ${outpu2} ${outpu3}`;
 }
+ 
+async function two() {
+    const promises = [a(), b(), c()];
+    const outpu1 = await Promise.race(promises);
+    return `two is done: ${outpu1}`;
+}
+ 
+async function three() {
+    const outpu1 = await a();
+    const outpu2 = await b();
+    const outpu3 = await c();
+    return `three is done: ${outpu1} ${outpu2} ${outpu3}`
+}
+ 
+one().then(console.log);
+two().then(console.log);
 
-const tranformedArray = setFilmsIds(films);
-console.log(tranformedArray);
-
-console.log(tranformedArray.every(item => Object.hasOwn(item, 'id')));
-
-
-
-const funds = [
-    {amount: -1400},
-    {amount: 2400},
-    {amount: -1000},
-    {amount: 500},
-    {amount: 10400},
-    {amount: -11400}
-];
-
-const getPositiveIncomeAmount = (data) => {
-    return data.filter(item => item.amount > 0)
-                .reduce((sum, current) => sum + current.amount, 0);
-};
-
-getPositiveIncomeAmount(funds);
-
-const getTotalIncomeAmount = (data) => {
-    return data.some(item => item.amount < 0) ? data.reduce((acc, curr) => acc + curr.amount, 0) : getPositiveIncomeAmount(data);
-};
-
-getTotalIncomeAmount(funds);

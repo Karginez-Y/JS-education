@@ -1736,18 +1736,18 @@
 // console.log(res3);
 
 
-// const obj = {
-//     ivan: 'persone',
-//     ann: 'persone',
-//     dog: 'animal',
-//     cat: 'animal'
-// };
+const obj = {
+    ivan: 'persone',
+    ann: 'persone',
+    dog: 'animal',
+    cat: 'animal'
+};
 
-// const newArr = Object.entries(obj)
-// .filter(item => item[1] === 'persone')
-// .map(item => item[0]);
+const newArr = Object.entries(obj)
+.filter(item => item[1] === 'persone')
+.map(item => item[0]);
 
-// console.log(newArr);
+console.log(newArr);
 
 // const films = [
 //     {

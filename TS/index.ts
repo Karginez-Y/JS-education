@@ -390,35 +390,190 @@
 //literal types////
 
 
-let msg: 'Hello' = 'Hello'
+// let msg: 'Hello' = 'Hello'
 
-msg = 'Hello' //нельзя ничего другого присвоить
+// msg = 'Hello' //нельзя ничего другого присвоить
 
 
-function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Server started' {
-    console.log(`server started on ${protocol}://server:${port}`);
-    return 'Server started'
-}
+// function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Server started' {
+//     console.log(`server started on ${protocol}://server:${port}`);
+//     return 'Server started'
+// }
 
-startServer('https', 3001);
+// startServer('https', 3001);
 
-function createAnimation(
-    id: string | number, 
-    anmationName: string, 
-    timingFunc: 'ease' | 'ease-out' | 'ease-in' = 'ease',
-    duration: number,
-    iterCount: 'infinite' | number
-):void {
-    //const elem = document.querySelector(`#${id}`) as HTMLElement;
+// function createAnimation(
+//     id: string | number, 
+//     anmationName: string, 
+//     timingFunc: 'ease' | 'ease-out' | 'ease-in' = 'ease',
+//     duration: number,
+//     iterCount: 'infinite' | number
+// ):void {
+//     //const elem = document.querySelector(`#${id}`) as HTMLElement;
 
-    //if (elem) {
-        console.log(`${anmationName} ${timingFunc} ${duration} ${iterCount}`);
-        //elem.style.animation = `${anmationName} ${timingFunc} ${duration} ${iterCount}`;
-    //}
+//     //if (elem) {
+//         console.log(`${anmationName} ${timingFunc} ${duration} ${iterCount}`);
+//         //elem.style.animation = `${anmationName} ${timingFunc} ${duration} ${iterCount}`;
+//     //}
     
+// }
+
+// createAnimation('id', 'fade', 'ease-in', 5, 'infinite');
+
+
+
+// type aliases ////
+
+
+// type AnimationTimingFunc = 'ease' | 'ease-out' | 'ease-in';
+// type AnimationID = string | number;
+
+// function createAnimation(
+//     id: AnimationID,
+//     anmationName: string, 
+//     timingFunc: AnimationTimingFunc = 'ease',
+//     duration: number,
+//     iterCount: 'infinite' | number
+// ): void {
+//     //const elem = document.querySelector(`#${id}`) as HTMLElement;
+
+//     //if (elem) {
+//         console.log(`${anmationName} ${timingFunc} ${duration} ${iterCount}`);
+//         //elem.style.animation = `${anmationName} ${timingFunc} ${duration} ${iterCount}`;
+//     //}
+    
+// }
+
+// createAnimation('id', 'fade', 'ease-in', 5, 'infinite');
+
+
+
+//Объектные литералы и аннотации функций
+
+// const serverConfig: {protocol: 'http' | 'https'; port: 3000 | 3001 } = {
+//     protocol: 'https',
+//     port: 3001
+// }
+
+// const startServer: (protocol: 'http' | 'https', port: 3000 | 3001) => string = ( //аннотацтя функции
+//     protocol: 'http' | 'https', 
+//     port: 3000 | 3001
+//     ): 'Server started' => {
+//     console.log(`server started on ${protocol}://server:${port}`);
+
+//     return 'Server started';
+// }
+
+// startServer(serverConfig.protocol, serverConfig.port);
+
+
+// intersection ////////
+
+// type Config = {protocol: 'http' | 'https'; port: 3000 | 3001 };
+// type Role = {
+//     role: string;
+// };
+// type ConfigWithRole = Config & Role;
+
+// const serverConfig: ConfigWithRole = {
+//     protocol: 'https',
+//     port: 3001,
+//     role: 'admin'
+// }
+
+// const beckupConfig: Config = {
+//     protocol: 'http',
+//     port: 3000
+// }
+
+// type StartFunction = (protocol: 'http' | 'https', port: 3000 | 3001) => string
+
+// const startServer: StartFunction = ( //аннотацтя функции
+//     protocol: 'http' | 'https', 
+//     port: 3000 | 3001
+//     ): 'Server started' => {
+//     console.log(`server started on ${protocol}://server:${port}`);
+
+//     return 'Server started';
+// }
+
+// startServer(serverConfig.protocol, serverConfig.port);
+
+//interface ///////
+
+//type Config = {protocol: 'http' | 'https'; port: 3000 | 3001 };
+interface Config {
+    protocol: 'http' | 'https'; 
+    port: 3000 | 3001;
+    log: (msg: string) => void;
 }
 
-createAnimation('id', 'fade', 'ease-in', 5, 'infinite');
+interface Role {
+    role: string;
+}
+
+interface ConfigWithRole extends Config, Role { //если {} оставить пустым то унаследуются все свойства из двух интерфейсов
+    test: string; //добавить доп свойство
+}
+
+const serverConfig: ConfigWithRole = {
+    protocol: 'https',
+    port: 3001,
+    role: 'admin',
+    test: 'test',
+    log: (msg: string): void => console.log(msg)
+}
+
+type StartFunction = (
+    protocol: 'http' | 'https', 
+    port: 3000 | 3001,
+    log: (msg: string) => void
+    ) => string
+
+const startServer: StartFunction = ( //аннотацтя функции
+    protocol: 'http' | 'https', 
+    port: 3000 | 3001,
+    log: (msg: string) => void
+    ): 'Server started' => {
+    console.log(`server started on ${protocol}://server:${port}`);
+
+    return 'Server started';
+}
+
+startServer(serverConfig.protocol, serverConfig.port, serverConfig.log);
+
+interface Styles {
+    [key: string]: string
+}
+const styles: Styles = {
+    position: 'absolute',
+    top: '20px',
+    left: '50px'
+}
 
 
 
+
+const serverNewConfig = {
+    protocol: 'https',
+    port: 3001,
+    role: 'admin'
+}
+
+const beckupNewConfig = {
+    protocol: 'http',
+    port: 3000
+}
+interface BasicConfig {
+    protocol: string;
+    port: number;
+}
+
+const startNewServer = (config: BasicConfig): 'Server started' => {
+    console.log(`server started on ${config.protocol}://server:${config.port}`);
+
+    return 'Server started';
+}
+
+startNewServer(serverNewConfig);
+startNewServer(beckupNewConfig);
